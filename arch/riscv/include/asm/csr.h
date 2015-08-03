@@ -38,6 +38,8 @@
 #define EXC_LOAD_ACCESS         5
 #define EXC_STORE_ACCESS        7
 #define EXC_SYSCALL             8
+#define EXC_LOAD_TAG		13
+#define EXC_STORE_TAG		14
 
 #ifndef __ASSEMBLY__
 

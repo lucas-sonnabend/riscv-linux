@@ -121,6 +121,22 @@ asmlinkage void do_trap_break(struct pt_regs *regs)
 	regs->sepc += 0x4;
 }
 
+asmlinkage void do_trap_load_tag(struct pt_regs *regs)
+{
+	long unsigned int addr = regs->sbadaddr;
+	//TODO: do something useful here
+	//pr_info("kernel: do trap load: tag exception on loading from address 0x%lx\n", addr);
+	// advance pc to resume at instruction after the trap
+	//regs->sepc+=4;  //comment this out to busily spin on it
+}
+asmlinkage void do_trap_store_tag(struct pt_regs *regs)
+{
+	//TODO: do something useful here
+	//pr_info("kernel: do trap store: tag exception on loading from address 0x%x\n", regs->sbadaddr);
+	// advance pc to resume at instruction after the trap
+	regs->sepc+=4;
+}
+
 #ifdef CONFIG_GENERIC_BUG
 int is_valid_bugaddr(unsigned long pc)
 {

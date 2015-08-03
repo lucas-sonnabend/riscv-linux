@@ -362,7 +362,12 @@ ENTRY(excp_vect_table)
 	PTR do_trap_unknown
 	PTR do_page_fault
 	PTR 0 /* handle_syscall */
-	PTR do_trap_break
+	PTR do_trap_break		//0x09
+	PTR do_trap_unknown		//0x0A
+	PTR do_trap_unknown		
+	PTR do_trap_unknown
+	PTR do_trap_load_tag		//0x0D
+	PTR do_trap_store_tag		//0x0E
 excp_vect_table_end:
 END(excp_vect_table)
 
