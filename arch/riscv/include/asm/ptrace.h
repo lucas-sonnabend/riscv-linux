@@ -43,6 +43,10 @@ struct pt_regs {
 	unsigned long sstatus;
 	unsigned long sbadaddr;
 	unsigned long scause;
+	
+	/* tag rule table registers*/
+	unsigned long ld_tag;
+	unsigned long sd_tag;
 };
 
 #ifdef CONFIG_64BIT

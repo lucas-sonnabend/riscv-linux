@@ -125,14 +125,14 @@ asmlinkage void do_trap_load_tag(struct pt_regs *regs)
 {
 	long unsigned int addr = regs->sbadaddr;
 	//TODO: do something useful here
-	//pr_info("kernel: do trap load: tag exception on loading from address 0x%lx\n", addr);
+	pr_info("kernel: do_trap_load: tag exception on loading from address 0x%lx, pc: 0x%lx\n", addr, regs->sepc);
 	// advance pc to resume at instruction after the trap
-	//regs->sepc+=4;  //comment this out to busily spin on it
+	regs->sepc+=4; 
 }
 asmlinkage void do_trap_store_tag(struct pt_regs *regs)
 {
 	//TODO: do something useful here
-	//pr_info("kernel: do trap store: tag exception on loading from address 0x%x\n", regs->sbadaddr);
+	pr_info("kernel: do trap store: tag exception on storing into address 0x%x, pc: 0x%lx\n", regs->sbadaddr, regs->sepc);
 	// advance pc to resume at instruction after the trap
 	regs->sepc+=4;
 }

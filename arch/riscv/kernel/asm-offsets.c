@@ -96,4 +96,6 @@ void asm_offsets(void)
 	OFFSET(PT_SSTATUS, pt_regs, sstatus);
 	OFFSET(PT_SBADADDR, pt_regs, sbadaddr);
 	OFFSET(PT_SCAUSE, pt_regs, scause);
+	OFFSET(PT_LD_TAG, pt_regs, ld_tag);
+	OFFSET(PT_SD_TAG, pt_regs, sd_tag);
 }
